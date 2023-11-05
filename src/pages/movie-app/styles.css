@@ -1,5 +1,10 @@
 .movie-app {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+  color: white;
+  background-color: #141414;
+}
+
+input {
   color: black;
 }
