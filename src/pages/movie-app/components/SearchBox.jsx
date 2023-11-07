@@ -2,7 +2,7 @@ import React from "react";
 
 export const SearchBox = (props) => {
   return (
-    <div>
+    <div className="search-box">
       <input
         value={props.searchVal}
         onChange={(e) => props.setSearchVal(e.target.value)}

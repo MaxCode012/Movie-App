@@ -1,10 +1,152 @@
+/* styles.css */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap");
+
 .movie-app {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   color: white;
   background-color: #141414;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: "Noto Sans";
+  overflow: hidden; /* Prevent horizontal overflow from hiding content */
 }
 
 input {
   color: black;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+  margin-right: 10px; /* Reduce the spacing between images */
+  max-width: 150px; /* Set a maximum width for the images */
+}
+
+.image-container img {
+  width: 100%; /* Make sure the image fits within the container */
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.movie-list-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.movie-list {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px; /* Add padding to the movie list container */
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.movie-app {
+  color: white;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.movie-list-container {
+  max-width: 100%;
+  white-space: nowrap;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 10px; /* Add padding to the movie list container */
+}
+
+.movie-list {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin-right: 10px; /* Reduce the spacing between images */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.movie-list-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.movie-list-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.movie-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  transition: 0.5s ease-in;
+  opacity: 0;
+  bottom: 0;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  overflow: hidden;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .movie-app {
+    padding: 10px;
+  }
+
+  input {
+    padding: 5px;
+  }
+
+  .image-container {
+    margin-right: 5px;
+    max-width: 100px;
+  }
+
+  .image-container img {
+    max-width: 100%;
+  }
+
+  .overlay {
+    font-size: 8px;
+    padding: 5px;
+  }
 }
